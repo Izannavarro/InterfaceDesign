@@ -14,9 +14,10 @@ import {
   StatusBar,
   StyleSheet,
   View,
+  Text,
 } from 'react-native';
 
-import {Provider as PaperProvider, Text} from 'react-native-paper';
+import {Provider as PaperProvider} from 'react-native-paper';
 
 import Partit from './src/components/partit/Partit';
 
@@ -28,16 +29,11 @@ const nom = (textAMostrar) =>{
 /** A la funció App, dins del return crearem la nostra pantalla */
 const App = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar />
-      <ScrollView>
-        <View style={styles.header}>
+  
          <PaperProvider>
-          {nom()}
+          {nom("Izan Navarro")}
          </PaperProvider>
-        </View>
-      </ScrollView>
-    </View>
+
   );
 };
 
