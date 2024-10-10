@@ -13,11 +13,17 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
 
-import Partit from './components/partit/Partit';
+import {Provider as PaperProvider, Text} from 'react-native-paper';
+
+import Partit from './src/components/partit/Partit';
+
+const nom = (textAMostrar) =>{
+  return <Text>{textAMostrar}</Text>
+}
+
 
 /** A la funció App, dins del return crearem la nostra pantalla */
 const App = () => {
@@ -26,20 +32,9 @@ const App = () => {
       <StatusBar />
       <ScrollView>
         <View style={styles.header}>
-          <Text style={styles.title}> Resultados Liga 24-25 </Text>
-          <Image
-            style={styles.image}
-            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-          />
-        </View>
-
-        {/* Partits */}
-        <View style={styles.matchList}>
-          <Partit e1="Valencia CF" e2="Betis" r1={5} r2={5} />
-          <Partit e1="Osasuna" e2="Oviedo" r1={2} r2={1} />
-          <Partit e1="Real Madrid" e2="Barcelona" r1={3} r2={2} />
-          <Partit e1="Sevilla" e2="Atletico Madrid" r1={1} r2={1} />
-          <Partit e1="Villarreal" e2="Real Sociedad" r1={0} r2={2} />
+         <PaperProvider>
+          {nom()}
+         </PaperProvider>
         </View>
       </ScrollView>
     </View>
